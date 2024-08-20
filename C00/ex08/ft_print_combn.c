@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/20 16:57:10 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/08/20 17:00:50 by bcanseve         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdbool.h>
 
@@ -8,8 +20,8 @@ void	ft_putchar(char c)
 
 void	print(int *tab, int n)
 {
-	int i;
-	bool low;
+	int		i;
+	bool	low;
 
 	i = 1;
 	low = 1;
@@ -34,8 +46,8 @@ void	print(int *tab, int n)
 
 void	ft_print_combn(int n)
 {
-	int i;
-	int tab[n];
+	int	i;
+	int	tab;
 
 	i = 0;
 	while (i < n)
@@ -53,6 +65,6 @@ void	ft_print_combn(int n)
 				tab[i] = 0;
 			}
 			i--;
-		} 
+		}
 	}
 }
