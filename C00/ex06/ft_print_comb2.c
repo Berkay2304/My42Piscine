@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/20 16:52:27 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/08/20 16:56:05 by bcanseve         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdbool.h>
 
-void	ft_putchar (char c)
+void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
@@ -22,12 +34,12 @@ void	ft_write_comb(int a, int b, bool last)
 
 void	ft_print_comb2(void)
 {
-	int	a;
-	int	b;
-	bool last;
+	int		a;
+	int		b;
+	bool	last;
 
 	a = 0;
-	while(a <= 99)
+	while (a <= 99)
 	{
 		b = a + 1;
 		while (b <= 99)
