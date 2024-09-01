@@ -1,27 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   : ft_str_is_alpha.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: berkay2304 <berkay2304@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 14:59:49 by berkay2304        #+#    #+#             */
-/*   Updated: 2024/08/27 18:18:12 by berkay2304       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-
+#include<stdio.h>
+int ft_strlen(char *str){
+    int i;
+    i = 0;
+    
+    while (*(str+i) != '\0')
+    {
+        i++;
+    }
+    return i;
+}
 int ft_str_is_alpha(char *str){
     int i;
     i = 0;
     
-    while (*(str+i)!= '\0')
+    while (i<=ft_strlen(str))
     {
-        if(!((*(str+i)<='z' && *(str+i)>='a') ||  (*(str+i)<='Z' && *(str+i)>='A'))){
+        if(!(*(str+i)<=90) && !(*(str+i)>=65)){
             return 0;
         }
-        return 1;
         i++;
     }
-    return 1;
+}
+int main(int argc, char const *argv[])
+{
+    char str1[]= "123";
+    char str2[]= "1123";
+    printf("%d\n%d",ft_str_is_alpha(str1),ft_str_is_alpha(str2));
+    return 0;
 }
