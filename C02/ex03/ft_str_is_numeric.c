@@ -1,15 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: berkay2304 <berkay2304@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 18:12:45 by berkay2304        #+#    #+#             */
-/*   Updated: 2024/08/27 18:18:03 by berkay2304       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+// #include <stdio.h>
 int ft_str_is_numeric(char *str){
     int i;
     i = 0;
@@ -18,9 +7,17 @@ int ft_str_is_numeric(char *str){
     {
         if(!(*(str+i)<='9' && *(str+i)>='0')){
             return 0;
-        }
-        return 1;
+        }+
         i++;
     }
+    
     return 1;
 }
+// int main(int argc, char const *argv[])
+// {
+//     char str1[]= "123";
+//     char str2[]= "1Berkday";
+//     char str3[]= "";
+//     printf("%d\n%d\n%d",ft_str_is_numeric(str1),ft_str_is_numeric(str2),ft_str_is_numeric(str3));
+//     return 0;
+// }

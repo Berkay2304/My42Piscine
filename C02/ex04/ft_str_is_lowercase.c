@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: berkay2304 <berkay2304@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 18:14:32 by berkay2304        #+#    #+#             */
-/*   Updated: 2024/08/27 18:17:55 by berkay2304       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// #include <stdio.h>
 
 int ft_str_is_lowercase(char *str){
     int i;
@@ -19,8 +9,15 @@ int ft_str_is_lowercase(char *str){
         if(!(*(str+i)<='z' && *(str+i)>='a')){
             return 0;
         }
-        return 1;
         i++;
     }
     return 1;
 }
+// int main(int argc, char const *argv[])
+// {
+//     char str1[]= "BERKAY";
+//     char str2[]= "Berkay";
+//     char str3[]= "";
+//     printf("%d\n%d\n%d",ft_str_is_lowercase(str1),ft_str_is_lowercase(str2),ft_str_is_lowercase(str3));
+//     return 0;
+// }
