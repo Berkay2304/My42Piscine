@@ -1,8 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 14:34:49 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/02 14:37:41 by bcanseve         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_swap(int *a, int *b){
-    int number = 0;
-    int *temp = &number;
-    *temp = *a;
-    *a = *b;
-    *b = *temp;
+void	ft_swap(int *a, int *b)
+{
+	int	number;
+	int	*temp;
+
+	number = 0;
+	temp = &number;
+	*temp = *a;
+	*a = *b;
+	*b = *temp;
 }

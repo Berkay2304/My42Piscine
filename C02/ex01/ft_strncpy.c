@@ -1,31 +1,36 @@
-// #include<stdio.h>
-int ft_strlen(char *str){
-    int i;
-    i = 0;
-    
-    while (*(str+i) != '\0')
-    {
-        i++;
-    }
-    return i;
-}
-char *ft_strncpy(char *dest, char *src, unsigned int n){
-    int i;
-    i = 0;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 14:51:37 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/02 14:53:01 by bcanseve         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    while (i < n)
-    {
-        *(dest+i) = *(src+i);
-        i++;
-    }
-    return dest;
-    
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*(str + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
-// int main(int argc, char const *argv[])
-// {
-//     char dest[6];
-//     char src[]="Hello World";
-//     ft_strncpy(dest,src,5);
-//     printf("%s",dest);
-//     return 0;
-// }
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		*(dest + i) = *(src + i);
+		i++;
+	}
+	return (dest);
+}

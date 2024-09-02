@@ -1,9 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 14:39:13 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/02 14:40:49 by bcanseve         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_ultimate_div_mod(int *a, int *b){
-    int temp1=0;
-    int temp2 = 0;
-    temp1= (*a)/(*b);
-    temp2 = (*a) % (*b);
-    *a = temp1;
-    *b = temp2;
+void	ft_ultimate_div_mod(int *a, int *b)
+{
+	int	temp1;
+	int	temp2;
+
+	temp1 = 0;
+	temp2 = 0;
+	temp1 = (*a) / (*b);
+	temp2 = (*a) % (*b);
+	*a = temp1;
+	*b = temp2;
 }
