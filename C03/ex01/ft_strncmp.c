@@ -6,18 +6,20 @@
 /*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:23:33 by bcanseve          #+#    #+#             */
-/*   Updated: 2024/09/03 14:29:07 by bcanseve         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:17:44 by bcanseve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
 		i++;
 	}
+	if (i == n)
+		return (0);
 	return (s1[i] - s2[i]);
 }
