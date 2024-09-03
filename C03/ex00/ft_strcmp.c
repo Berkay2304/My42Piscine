@@ -1,46 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 14:53:13 by bcanseve          #+#    #+#             */
-/*   Updated: 2024/09/03 14:13:32 by bcanseve         ###   ########.fr       */
+/*   Created: 2024/09/03 13:33:34 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/03 14:19:50 by bcanseve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
 	{
 		i++;
 	}
-	return (i);
-}
-
-int	ft_str_is_alpha(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (ft_strlen(str) == 0)
-	{
-		return (1);
-	}
-	while (i < ft_strlen(str))
-	{
-		if (!((str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			if (!(str[i] >= 'a' && str[i] <= 'z'))
-			{
-				return (0);
-			}
-		}
-		i++;
-	}
-	return (1);
+	return (s1[i] - s2[i]);
 }

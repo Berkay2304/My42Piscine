@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 14:53:13 by bcanseve          #+#    #+#             */
-/*   Updated: 2024/09/03 14:13:32 by bcanseve         ###   ########.fr       */
+/*   Created: 2024/09/03 14:35:27 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/03 14:40:07 by bcanseve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	j = 0;
+	if (to_find[j] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		i++;
-	}
-	return (i);
-}
-
-int	ft_str_is_alpha(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (ft_strlen(str) == 0)
-	{
-		return (1);
-	}
-	while (i < ft_strlen(str))
-	{
-		if (!((str[i] >= 'A' && str[i] <= 'Z')))
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
 		{
-			if (!(str[i] >= 'a' && str[i] <= 'z'))
-			{
-				return (0);
-			}
+			j++;
 		}
+		if (to_find[j] == '\0')
+			return (str + i);
 		i++;
+		j = 0;
 	}
-	return (1);
+	return (0);
 }

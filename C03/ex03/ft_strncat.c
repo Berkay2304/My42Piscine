@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 14:53:13 by bcanseve          #+#    #+#             */
-/*   Updated: 2024/09/03 14:13:32 by bcanseve         ###   ########.fr       */
+/*   Created: 2024/09/03 14:33:28 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/03 14:35:03 by bcanseve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	j = 0;
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	return (i);
-}
-
-int	ft_str_is_alpha(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (ft_strlen(str) == 0)
+	while (j < nb && src[j] != '\0')
 	{
-		return (1);
+		dest[i + j] = src [j];
+		j++;
 	}
-	while (i < ft_strlen(str))
-	{
-		if (!((str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			if (!(str[i] >= 'a' && str[i] <= 'z'))
-			{
-				return (0);
-			}
-		}
-		i++;
-	}
-	return (1);
+	dest[i + j] = '\0';
+	return (dest);
 }

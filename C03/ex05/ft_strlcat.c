@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 14:53:13 by bcanseve          #+#    #+#             */
-/*   Updated: 2024/09/03 14:13:32 by bcanseve         ###   ########.fr       */
+/*   Created: 2024/09/03 14:40:45 by bcanseve          #+#    #+#             */
+/*   Updated: 2024/09/03 14:42:42 by bcanseve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,36 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
 	return (i);
 }
 
-int	ft_str_is_alpha(char *str)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	dlen;
+	unsigned int	slen;
 
 	i = 0;
-	if (ft_strlen(str) == 0)
+	j = 0;
+	while (dest[j] != '\0')
 	{
-		return (1);
+		j++;
 	}
-	while (i < ft_strlen(str))
+	dlen = j;
+	slen = ft_strlen(src);
+	if (size == 0 || size <= dlen)
+		return (slen + size);
+	while (src [i] != '\0' && i < size - dlen - 1)
 	{
-		if (!((str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			if (!(str[i] >= 'a' && str[i] <= 'z'))
-			{
-				return (0);
-			}
-		}
+		dest[j] = src[i];
 		i++;
+		j++;
 	}
-	return (1);
+	dest[j] = '\0';
+	return (dlen + slen);
 }
