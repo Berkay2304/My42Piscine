@@ -6,7 +6,7 @@
 /*   By: bcanseve <bcanseve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:30:31 by bcanseve          #+#    #+#             */
-/*   Updated: 2024/09/04 13:31:37 by bcanseve         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:01:19 by bcanseve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,29 +50,29 @@ int	nb_base(char str, char *base)
 
 int	whitespaces(char *str, int *ptr_i)
 {
-	int	count;
+	int	sign;
 	int	i;
 
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	count = 1;
+	sign = 1;
 	while (str[i] && (str[i] == 43 || str[i] == 45))
 	{
 		if (str[i] == 45)
-			count *= -1;
+			sign *= -1;
 		i++;
 	}
 	*ptr_i = i;
-	return (count);
+	return (sign);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
 	int		i;
-	int		negative;
+	int		sign;
 	int		nb;
-	int		nb2;
+	int		nb_i;
 	int		begin_len;
 
 	nb = 0;
@@ -80,15 +80,15 @@ int	ft_atoi_base(char *str, char *base)
 	begin_len = checkerror(base);
 	if (begin_len >= 2)
 	{
-		negative = whitespaces(str, &i);
-		nb2 = nb_base(str[i], base);
-		while (nb2 != -1)
+		sign = whitespaces(str, &i);
+		nb_i = nb_base(str[i], base);
+		while (nb_i != -1)
 		{
-			nb = (nb * begin_len) + nb2;
+			nb = (nb * begin_len) + nb_i;
 			i++;
-			nb2 = nb_base(str[i], base);
+			nb_i = nb_base(str[i], base);
 		}
-		return (nb *= negative);
+		return (nb *= sign);
 	}
 	return (0);
 }
